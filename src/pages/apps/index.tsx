@@ -21,9 +21,9 @@ import { Button } from '@/components/custom/button'
 import { apps } from './data'
 
 const appText = new Map<string, string>([
-  ['all', 'All Apps'],
-  ['connected', 'Connected'],
-  ['notConnected', 'Not Connected'],
+  ['all', 'Todos'],
+  ['connected', 'Conectado'],
+  ['notConnected', 'Não Conectado'],
 ])
 
 export default function Apps() {
@@ -63,16 +63,16 @@ export default function Apps() {
       <Layout.Body className='flex flex-col'>
         <div>
           <h1 className='text-2xl font-bold tracking-tight'>
-            App Integrations
+          Integrações de aplicativos
           </h1>
           <p className='text-muted-foreground'>
-            Here&apos;s a list of your apps for the integration!
+          Aqui está uma lista de seus aplicativos para integração!
           </p>
         </div>
         <div className='my-4 flex items-end justify-between sm:my-0 sm:items-center'>
           <div className='flex flex-col gap-4 sm:my-4 sm:flex-row'>
             <Input
-              placeholder='Filter apps...'
+              placeholder='Filtrar aplicativos...'
               className='h-9 w-40 lg:w-[250px]'
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -82,9 +82,9 @@ export default function Apps() {
                 <SelectValue>{appText.get(appType)}</SelectValue>
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value='all'>All Apps</SelectItem>
-                <SelectItem value='connected'>Connected</SelectItem>
-                <SelectItem value='notConnected'>Not Connected</SelectItem>
+                <SelectItem value='all'>Todos</SelectItem>
+                <SelectItem value='connected'>Conectado</SelectItem>
+                <SelectItem value='notConnected'>Não conectado</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -99,13 +99,13 @@ export default function Apps() {
               <SelectItem value='ascending'>
                 <div className='flex items-center gap-4'>
                   <IconSortAscendingLetters size={16} />
-                  <span>Ascending</span>
+                  <span>Ascendente</span>
                 </div>
               </SelectItem>
               <SelectItem value='descending'>
                 <div className='flex items-center gap-4'>
                   <IconSortDescendingLetters size={16} />
-                  <span>Descending</span>
+                  <span>Descendente</span>
                 </div>
               </SelectItem>
             </SelectContent>
@@ -129,7 +129,7 @@ export default function Apps() {
                   size='sm'
                   className={`${app.connected ? 'border border-blue-300 bg-blue-50 hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-950 dark:hover:bg-blue-900' : ''}`}
                 >
-                  {app.connected ? 'Connected' : 'Connect'}
+                  {app.connected ? 'Conectado' : 'Conectar'}
                 </Button>
               </div>
               <div>

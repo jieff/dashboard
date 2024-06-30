@@ -4,8 +4,8 @@ import ContentSection from '../components/content-section'
 export default function SettingsProfile() {
   return (
     <ContentSection
-      title='Profile'
-      desc='This is how others will see you on the site.'
+      title='Perfil'
+      desc='É assim que outras pessoas verão você no site.'
     >
       <ProfileForm />
     </ContentSection>

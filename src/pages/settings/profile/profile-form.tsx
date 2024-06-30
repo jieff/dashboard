@@ -52,7 +52,7 @@ type ProfileFormValues = z.infer<typeof profileFormSchema>
 
 // This can come from your database or API.
 const defaultValues: Partial<ProfileFormValues> = {
-  bio: 'I own a computer.',
+  bio: 'Eu possuo um computador.',
   urls: [
     { value: 'https://shadcn.com' },
     { value: 'http://twitter.com/shadcn' },
@@ -90,13 +90,12 @@ export default function ProfileForm() {
           name='username'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Nome de usuário</FormLabel>
               <FormControl>
-                <Input placeholder='shadcn' {...field} />
+                <Input placeholder='Jieff Cavalcanti' {...field} />
               </FormControl>
               <FormDescription>
-                This is your public display name. It can be your real name or a
-                pseudonym. You can only change this once every 30 days.
+                Este é o seu nome de exibição público. Pode ser seu nome verdadeiro ou um pseudônimo. Você só pode alterar isso uma vez a cada 30 dias.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -111,7 +110,7 @@ export default function ProfileForm() {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder='Select a verified email to display' />
+                    <SelectValue placeholder='Selecione um e-mail verificado para exibir' />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -121,7 +120,7 @@ export default function ProfileForm() {
                 </SelectContent>
               </Select>
               <FormDescription>
-                You can manage verified email addresses in your{' '}
+                Você pode gerenciar endereços de e-mail verificados em seu{' '}
                 <Link to='/examples/forms'>email settings</Link>.
               </FormDescription>
               <FormMessage />
@@ -136,14 +135,14 @@ export default function ProfileForm() {
               <FormLabel>Bio</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder='Tell us a little bit about yourself'
+                  placeholder='Conte-nos um pouco sobre você'
                   className='resize-none'
                   {...field}
                 />
               </FormControl>
               <FormDescription>
-                You can <span>@mention</span> other users and organizations to
-                link to them.
+                Você pode <span>@mention</span> outros usuários e organizações para
+                link para eles.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -161,7 +160,7 @@ export default function ProfileForm() {
                     URLs
                   </FormLabel>
                   <FormDescription className={cn(index !== 0 && 'sr-only')}>
-                    Add links to your website, blog, or social media profiles.
+                    Adicione links para seu site, blog ou perfis de mídia social.
                   </FormDescription>
                   <FormControl>
                     <Input {...field} />
@@ -178,10 +177,10 @@ export default function ProfileForm() {
             className='mt-2'
             onClick={() => append({ value: '' })}
           >
-            Add URL
+            Adicionar URL
           </Button>
         </div>
-        <Button type='submit'>Update profile</Button>
+        <Button type='submit'>Atualizar Perfil</Button>
       </form>
     </Form>
   )

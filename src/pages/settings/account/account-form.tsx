@@ -92,13 +92,13 @@ export function AccountForm() {
           name='name'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Nome</FormLabel>
               <FormControl>
-                <Input placeholder='Your name' {...field} />
+                <Input placeholder='Seu nome' {...field} />
               </FormControl>
               <FormDescription>
-                This is the name that will be displayed on your profile and in
-                emails.
+                Este é o nome que será exibido no seu perfil e em
+                e-mails.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -109,7 +109,7 @@ export function AccountForm() {
           name='dob'
           render={({ field }) => (
             <FormItem className='flex flex-col'>
-              <FormLabel>Date of birth</FormLabel>
+              <FormLabel>Data de nascimento</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
@@ -123,7 +123,7 @@ export function AccountForm() {
                       {field.value ? (
                         dayjs(field.value).format('MMM D, YYYY')
                       ) : (
-                        <span>Pick a date</span>
+                        <span>Escolha uma data</span>
                       )}
                       <CalendarIcon className='ml-auto h-4 w-4 opacity-50' />
                     </Button>
@@ -142,7 +142,7 @@ export function AccountForm() {
                 </PopoverContent>
               </Popover>
               <FormDescription>
-                Your date of birth is used to calculate your age.
+                Sua data de nascimento é usada para calcular sua idade.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -153,7 +153,7 @@ export function AccountForm() {
           name='language'
           render={({ field }) => (
             <FormItem className='flex flex-col'>
-              <FormLabel>Language</FormLabel>
+              <FormLabel>Idioma</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
@@ -167,17 +167,17 @@ export function AccountForm() {
                     >
                       {field.value
                         ? languages.find(
-                            (language) => language.value === field.value
-                          )?.label
-                        : 'Select language'}
+                          (language) => language.value === field.value
+                        )?.label
+                        : 'Selecione Idioma'}
                       <CaretSortIcon className='ml-2 h-4 w-4 shrink-0 opacity-50' />
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
                 <PopoverContent className='w-[200px] p-0'>
                   <Command>
-                    <CommandInput placeholder='Search language...' />
-                    <CommandEmpty>No language found.</CommandEmpty>
+                    <CommandInput placeholder='Pesquisar Idioma...' />
+                    <CommandEmpty>Idioma não encontrado.</CommandEmpty>
                     <CommandGroup>
                       {languages.map((language) => (
                         <CommandItem
@@ -203,7 +203,7 @@ export function AccountForm() {
                 </PopoverContent>
               </Popover>
               <FormDescription>
-                This is the language that will be used in the dashboard.
+                Este é o idioma que será usado no painel.
               </FormDescription>
               <FormMessage />
             </FormItem>

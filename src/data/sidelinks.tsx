@@ -47,16 +47,17 @@ export const sidelinks: SideLink[] = [
     icon: <IconChecklist size={18} />,
   },
   {
-    title: 'Chats',
-    label: '9',
-    href: '/chats',
-    icon: <IconMessages size={18} />,
-  },
-  {
     title: 'Apps',
     label: '',
     href: '/apps',
     icon: <IconApps size={18} />,
+  },
+  /*
+  {
+    title: 'Chats',
+    label: '9',
+    href: '/chats',
+    icon: <IconMessages size={18} />,
   },
   {
     title: 'Autenticação',
@@ -101,7 +102,7 @@ export const sidelinks: SideLink[] = [
     label: '',
     href: '/users',
     icon: <IconUsers size={18} />,
-  },
+  }, 
   {
     title: 'Solicitações',
     label: '10',
@@ -160,6 +161,7 @@ export const sidelinks: SideLink[] = [
       },
     ],
   },
+  */
   {
     title: 'Configurações',
     label: '',

@@ -72,7 +72,7 @@ export default function Dashboard() {
                 <CardContent>
                   <div className='text-2xl font-bold'>R$ 45.231,89</div>
                   <p className='text-xs text-muted-foreground'>
-                    +20.1% from last month
+                    +20,1% em relação ao mês passado
                   </p>
                 </CardContent>
               </Card>
@@ -99,7 +99,7 @@ export default function Dashboard() {
                 <CardContent>
                   <div className='text-2xl font-bold'>+2350</div>
                   <p className='text-xs text-muted-foreground'>
-                    +180.1% from last month
+                    +180,1% em relação ao mês passado
                   </p>
                 </CardContent>
               </Card>
@@ -121,16 +121,16 @@ export default function Dashboard() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-2xl font-bold'>+12,234</div>
+                  <div className='text-2xl font-bold'>+12.234</div>
                   <p className='text-xs text-muted-foreground'>
-                    +19% from last month
+                    +19% em relação ao mês passado
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                   <CardTitle className='text-sm font-medium'>
-                    Ativos
+                    Ativados
                   </CardTitle>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -148,7 +148,7 @@ export default function Dashboard() {
                 <CardContent>
                   <div className='text-2xl font-bold'>+573</div>
                   <p className='text-xs text-muted-foreground'>
-                    +201 since last hour
+                    +201 desde a última hora
                   </p>
                 </CardContent>
               </Card>
@@ -166,7 +166,7 @@ export default function Dashboard() {
                 <CardHeader>
                   <CardTitle>Vendas Recentes</CardTitle>
                   <CardDescription>
-                  Você fez 265 vendas este mês.
+                    Você fez 265 vendas este mês.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
