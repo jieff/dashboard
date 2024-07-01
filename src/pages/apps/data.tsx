@@ -14,9 +14,16 @@ import {
   IconBrandTrello,
   IconBrandWhatsapp,
   IconBrandZoom,
+  IconBrandAws
 } from '@tabler/icons-react'
 
 export const apps = [
+  {
+    name: 'Amazon S3',
+    logo: <IconBrandAws />,
+    connected: true,
+    desc: 'Integre o Amazon S3 para armazenamento em nuvem.',
+  },
   {
     name: 'Telegram',
     logo: <IconBrandTelegram />,
@@ -26,13 +33,13 @@ export const apps = [
   {
     name: 'Notion',
     logo: <IconBrandNotion />,
-    connected: true,
+    connected: false,
     desc: 'Effortlessly sync Notion pages for seamless collaboration.',
   },
   {
     name: 'Figma',
     logo: <IconBrandFigma />,
-    connected: true,
+    connected: false,
     desc: 'View and collaborate on Figma designs in one place.',
   },
   {
@@ -45,12 +52,13 @@ export const apps = [
     name: 'Slack',
     logo: <IconBrandSlack />,
     connected: false,
-    desc: 'Integrate Slack for efficient team communication',
+    desc: 'Integre o Slack para uma comunicação eficiente da equipe',
   },
+  
   {
     name: 'Zoom',
     logo: <IconBrandZoom />,
-    connected: true,
+    connected: false,
     desc: 'Host Zoom meetings directly from the dashboard.',
   },
   {
@@ -62,7 +70,7 @@ export const apps = [
   {
     name: 'Gmail',
     logo: <IconBrandGmail />,
-    connected: true,
+    connected: false,
     desc: 'Access and manage Gmail messages effortlessly.',
   },
   {
@@ -77,18 +85,20 @@ export const apps = [
     connected: false,
     desc: 'Connect with Skype contacts seamlessly.',
   },
+  
   {
-    name: 'Docker',
+    name: 'DockerHub',
     logo: <IconBrandDocker />,
-    connected: false,
-    desc: 'Effortlessly manage Docker containers on your dashboard.',
+    connected: true,
+    desc: 'Gerencie facilmente contêineres Docker em seu painel.',
   },
   {
     name: 'GitHub',
     logo: <IconBrandGithub />,
-    connected: false,
-    desc: 'Streamline code management with GitHub integration.',
+    connected: true,
+    desc: 'Simplifique o gerenciamento de código com integração ao GitHub.',
   },
+  
   {
     name: 'GitLab',
     logo: <IconBrandGitlab />,
@@ -107,4 +117,5 @@ export const apps = [
     connected: false,
     desc: 'Easily integrate WhatsApp for direct messaging.',
   },
+  
 ]

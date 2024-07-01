@@ -199,7 +199,7 @@ const topNav = [
   },
   {
     title: 'Configurações',
-    href: 'dashboard/settings',
+    href: 'settings',
     isActive: false,
   },
 ]
