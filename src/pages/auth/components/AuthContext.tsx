@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface AuthContextProps {
   isAuthenticated: boolean;
-  login: (email: string, name: string) => void; // Adicionando email e name como parâmetros
+  login: (email: string, name: string) => void; 
   logout: () => void;
   user: {
     email: string;
@@ -15,16 +15,16 @@ const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<{ email: string; name: string } | null>(null); // Estado para armazenar email e name
+  const [user, setUser] = useState<{ email: string; name: string } | null>(null); 
 
   const login = (email: string, name: string) => {
     setIsAuthenticated(true);
-    setUser({ email, name }); // Armazenando email e name do usuário
+    setUser({ email, name }); 
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    setUser(null); // Limpar o usuário ao sair
+    setUser(null); 
   };
 
   return (

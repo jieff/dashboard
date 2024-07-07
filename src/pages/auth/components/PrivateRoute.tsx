@@ -4,7 +4,7 @@ import { useAuth } from '@/pages/auth/components/AuthContext';
 
 const PrivateRoute = () => {
   const { isAuthenticated } = useAuth();
-  return isAuthenticated ? <Outlet /> : <Navigate to="/sign-up" />;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/sign-in" />;
 };
 
 export default PrivateRoute;
