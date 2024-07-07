@@ -1,30 +1,34 @@
+// AuthContext.tsx
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface AuthContextProps {
   isAuthenticated: boolean;
-  email: string | null;
-  login: (email: string) => void;
+  login: (email: string, name: string) => void; // Adicionando email e name como parâmetros
   logout: () => void;
+  user: {
+    email: string;
+    name: string;
+  } | null;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [email, setEmail] = useState<string | null>(null);
+  const [user, setUser] = useState<{ email: string; name: string } | null>(null); // Estado para armazenar email e name
 
-  const login = (userEmail: string) => {
+  const login = (email: string, name: string) => {
     setIsAuthenticated(true);
-    setEmail(userEmail);
+    setUser({ email, name }); // Armazenando email e name do usuário
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    setEmail(null);
+    setUser(null); // Limpar o usuário ao sair
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, email, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, user }}>
       {children}
     </AuthContext.Provider>
   );
