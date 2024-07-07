@@ -53,12 +53,12 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
     setIsLoading(true);
-
+  
     setTimeout(() => {
       setIsLoading(false);
-
+  
       if (data.email === userData.username && data.password === userData.password) {
-        login();
+        login(data.email); // Passa o email para o contexto de autenticação
         navigate('/dashboard');
       } else {
         setError('Credenciais inválidas. Por favor, verifique seu e-mail e senha.');

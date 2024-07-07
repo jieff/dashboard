@@ -1,5 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/custom/button';
+import React from 'react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,15 +9,16 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/custom/button';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/pages/auth/components/AuthContext';
 
 export function UserNav() {
   const navigate = useNavigate();
-  const { logout } = useAuth();
+  const { email, logout } = useAuth();
 
   const handleLogout = () => {
-    logout(); 
+    logout();
     navigate('/sign-in');
   };
 
@@ -26,19 +26,27 @@ export function UserNav() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-          <Avatar className="h-8 w-8">
-            <AvatarImage src="/avatars/01.png" alt="@shadcn" />
-            <AvatarFallback>JC</AvatarFallback>
-          </Avatar>
+          {/* Adiciona a condição para exibir o email */}
+          {email ? (
+            <span className="h-8 w-8 flex items-center justify-center">
+              {email.charAt(0).toUpperCase()}
+            </span>
+          ) : (
+            <span className="h-8 w-8 flex items-center justify-center">
+              JC {/* AvatarFallback ou outro texto padrão */}
+            </span>
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">Jieff Cavalcanti</p>
-            <p className="text-xs leading-none text-muted-foreground">
-              jieff.cavalcanti@gmail.com
+          <p className="text-sm font-medium leading-none">Jieff Cavalcanti</p>
+            {/* Exibe dinamicamente o email */}
+            <p className="text-sm font-medium leading-none">
+              {email}
             </p>
+            {/* Email fixo removido */}
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
