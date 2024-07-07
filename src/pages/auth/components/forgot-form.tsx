@@ -59,7 +59,7 @@ export function ForgotForm({ className, ...props }: ForgotFormProps) {
               )}
             />
             <Button className='mt-2' loading={isLoading}>
-              Continue
+              Enviar
             </Button>
           </div>
         </form>
