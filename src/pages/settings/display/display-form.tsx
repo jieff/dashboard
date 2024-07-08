@@ -81,9 +81,9 @@ export function DisplayForm() {
           render={() => (
             <FormItem>
               <div className='mb-4'>
-                <FormLabel className='text-base'>Sidebar</FormLabel>
+                <FormLabel className='text-base'>Barra Lateral</FormLabel>
                 <FormDescription>
-                  Select the items you want to display in the sidebar.
+                  Selecione os itens que deseja exibir na barra lateral.
                 </FormDescription>
               </div>
               {items.map((item) => (
@@ -104,10 +104,10 @@ export function DisplayForm() {
                               return checked
                                 ? field.onChange([...field.value, item.id])
                                 : field.onChange(
-                                    field.value?.filter(
-                                      (value) => value !== item.id
-                                    )
+                                  field.value?.filter(
+                                    (value) => value !== item.id
                                   )
+                                )
                             }}
                           />
                         </FormControl>
@@ -123,7 +123,7 @@ export function DisplayForm() {
             </FormItem>
           )}
         />
-        <Button type='submit'>Update display</Button>
+        <Button type='submit'>Atualizar exibição</Button>
       </form>
     </Form>
   )

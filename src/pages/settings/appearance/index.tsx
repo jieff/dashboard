@@ -4,9 +4,9 @@ import ContentSection from '../components/content-section'
 export default function SettingsAppearance() {
   return (
     <ContentSection
-      title='Appearance'
-      desc='Customize the appearance of the app. Automatically switch between day
-          and night themes.'
+      title='Aparência'
+      desc='Personalize a aparência do aplicativo. Alternar automaticamente entre o dia
+ e temas noturnos.'
     >
       <AppearanceForm />
     </ContentSection>
