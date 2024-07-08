@@ -53,31 +53,31 @@ const sidebarNavItems = [
   {
     title: 'Perfil',
     icon: <IconUser size={18} />,
-    href: '/settings',
+    href: '/dashboard/settings',
   },
   {
     title: 'Conta',
     icon: <IconTool size={18} />,
-    href: '/settings/account',
+    href: '/dashboard/settings/account',
   },
   {
     title: 'Aparência',
     icon: <IconPalette size={18} />,
-    href: '/settings/appearance',
+    href: '/dashboard/settings/appearance',
   },
   {
     title: 'Notificações',
     icon: <IconNotification size={18} />,
-    href: '/settings/notifications',
+    href: '/dashboard/settings/notifications',
   },
   {
     title: 'Mostrar',
     icon: <IconBrowserCheck size={18} />,
-    href: '/settings/display',
+    href: '/dashboard/settings/display',
   },
   {
     title: 'Error Example',
     icon: <IconExclamationCircle size={18} />,
-    href: '/settings/error-example',
+    href: '/dashboard/settings/error-example',
   },
 ]
