@@ -41,6 +41,18 @@ export const sidelinks: SideLink[] = [
     icon: <IconLayoutDashboard size={18} />,
   },
   {
+    title: 'Home',
+    label: '',
+    href: '/',
+    icon: <IconLayoutDashboard size={18} />,
+  },
+  {
+    title: 'About',
+    label: '',
+    href: '/about',
+    icon: <IconLayoutDashboard size={18} />,
+  },
+  {
     title: 'Tarefas',
     label: '3',
     href: '/tasks',

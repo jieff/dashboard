@@ -5,11 +5,12 @@ import MaintenanceError from './pages/errors/maintenance-error';
 import PrivateRoute from './pages/auth/components/PrivateRoute';
 
 const router = createBrowserRouter([
-  // Redireciona a rota inicial para sign-in-2
+  // Redireciona a rota inicial para sign-in
   {
     path: '/',
     loader: () => redirect('/sign-in'),
   },
+  
   // Rotas de autenticação
   {
     path: '/sign-in-1',
@@ -41,7 +42,16 @@ const router = createBrowserRouter([
       Component: (await import('./pages/auth/otp')).default,
     }),
   },
-  // Rotas protegidas
+  
+  // Rota desprotegida para testes de TenantRegistration
+  {
+    path: '/tenant-registration',
+    lazy: async () => ({
+      Component: (await import('@/components/registrations/TenantRegistration')).default,
+    }),
+  },
+  
+  // Rotas protegidas (dashboard)
   {
     path: '/dashboard',
     element: <PrivateRoute />,
@@ -146,10 +156,12 @@ const router = createBrowserRouter([
       },
     ],
   },
+  
   // Rotas de erro
   { path: '/500', Component: GeneralError },
   { path: '/404', Component: NotFoundError },
   { path: '/503', Component: MaintenanceError },
+  
   // Rota fallback 404
   { path: '*', Component: NotFoundError },
 ]);

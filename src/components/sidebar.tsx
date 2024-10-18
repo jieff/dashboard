@@ -97,7 +97,7 @@ export default function Sidebar({
           closeNav={() => setNavOpened(false)}
           isCollapsed={isCollapsed}
           links={sidelinks}
-        />
+        /> 
 
         {/* Scrollbar width toggle button */}
         <Button

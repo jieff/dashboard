@@ -11,23 +11,23 @@ import useCheckActiveNav from '@/hooks/use-check-active-nav';
 import { SideLink } from '@/data/sidelinks';
 
 interface NavProps {
+  id?: string; // Propriedade id adicionada
   isCollapsed: boolean;
   links: SideLink[];
   closeNav: () => void;
+  className?: string;
 }
 
-export default function Nav({ links, isCollapsed, closeNav }: NavProps) {
+export default function Nav({ links, isCollapsed, closeNav, id }: NavProps) {
   const renderLink = ({ sub, ...rest }: SideLink) => {
     const key = `${rest.title}-${rest.href}`;
 
     if (isCollapsed && sub) {
-      return (
-        <NavLinkIconDropdown {...rest} sub={sub} key={key} closeNav={closeNav} />
-      );
+      return <NavLinkIconDropdown {...rest} sub={sub} key={key} />;
     }
 
     if (isCollapsed) {
-      return <NavLinkIcon {...rest} key={key} closeNav={closeNav} />;
+      return <NavLinkIcon {...rest} key={key} />;
     }
 
     if (sub) {
@@ -39,6 +39,7 @@ export default function Nav({ links, isCollapsed, closeNav }: NavProps) {
 
   return (
     <div
+      id={id} // Usando o id se for passado
       data-collapsed={isCollapsed}
       className={cn(
         'group border-b bg-background py-2 transition-[max-height,padding] duration-500 data-[collapsed=true]:py-2 md:border-none'
@@ -52,7 +53,7 @@ export default function Nav({ links, isCollapsed, closeNav }: NavProps) {
 }
 
 interface NavLinkProps extends SideLink {
-  closeNav: () => void;
+  closeNav?: () => void;
 }
 
 function NavLink({ title, icon, label, href, closeNav }: NavLinkProps) {
@@ -60,7 +61,7 @@ function NavLink({ title, icon, label, href, closeNav }: NavLinkProps) {
   return (
     <Link
       to={`/dashboard${href}`} // Certifique-se de usar o caminho completo aqui
-      onClick={closeNav}
+      onClick={closeNav} // Chama a função closeNav
       className={cn(
         buttonVariants({
           variant: checkActiveNav(href) ? 'secondary' : 'ghost',
@@ -117,7 +118,7 @@ function NavLinkDropdown({ title, icon, label, sub, closeNav }: NavLinkProps) {
   );
 }
 
-function NavLinkIcon({ title, icon, href }: NavLinkProps) {
+function NavLinkIcon({ title, icon, href }: Omit<NavLinkProps, 'closeNav'>) {
   const { checkActiveNav } = useCheckActiveNav();
   return (
     <Link
@@ -136,7 +137,7 @@ function NavLinkIcon({ title, icon, href }: NavLinkProps) {
   );
 }
 
-function NavLinkIconDropdown({ title, icon, sub }: NavLinkProps) {
+function NavLinkIconDropdown({ title, icon, sub }: Omit<NavLinkProps, 'closeNav'>) {
   const { checkActiveNav } = useCheckActiveNav();
   const isChildActive = !!sub?.find((s) => checkActiveNav(s.href));
 
@@ -158,7 +159,7 @@ function NavLinkIconDropdown({ title, icon, sub }: NavLinkProps) {
         <ul>
           {sub!.map((sublink) => (
             <li key={sublink.title} className='my-1 ml-8'>
-              <NavLink {...sublink} closeNav={closeNav} />
+              <NavLink {...sublink} />
             </li>
           ))}
         </ul>
